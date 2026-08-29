@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hlulani B — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Hlulani</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hey, I'm</p>
+        <h1 class="hero-name">Hlulani Baloyi</h1>
+        <p class="hero-tagline">BSc Computer Science student at the University of the Witwatersrand. I build AI-integrated web applications and backend systems that solve real problems.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="hero-image-frame">
+          <img src="portfolio_picture.jpg" alt="Hlulani Baloyi" class="hero-image">
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+    </div>
+    <div class="floating-heart">
+      <span class="heart-emoji">&#10084;&#65039;</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">About</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-paragraph">I am a BSc Computer Science student at the University of the Witwatersrand (2023 - 2026) with hands-on experience building backend systems for AI-integrated web applications. I design REST APIs with Node.js and Express, and work with LLM services like Groq and Gemini for function calling and content generation.</p>
+          <p class="about-paragraph">I enjoy tackling complex engineering problems and turning ideas into functional, well-designed software.</p>
+          <p class="about-paragraph">Every project I build pushes me to learn something new, whether that is mastering a new framework, debugging a tricky API integration, or architecting a microservices system from scratch.</p>
+        </div>
+        <div class="about-skills">
+          <h3 class="skills-heading">Technical Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4 class="skill-category-title">Languages</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">C</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Frameworks & Libraries</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">React.js</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express</span>
+                <span class="skill-tag">Vite</span>
+                <span class="skill-tag">NumPy</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Tools & Platforms</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">Firebase</span>
+                <span class="skill-tag">Supabase</span>
+                <span class="skill-tag">Vercel</span>
+                <span class="skill-tag">Render</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Specialisations</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">LLM Integration</span>
+                <span class="skill-tag">Prompt Engineering</span>
+                <span class="skill-tag">Microservices</span>
+                <span class="skill-tag">HTML / CSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-education">
+        <div class="education-card">
+          <div class="education-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/></svg>
+          </div>
+          <div class="education-details">
+            <h4>University of the Witwatersrand</h4>
+            <p>BSc Computer Science | 2023 - 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A selection of projects I have built, ranging from AI-powered applications to full-stack microservices architectures.</p>
+      </div>
+
+      <!-- Project 1: Data-Cleaner -->
+      <article class="project-card project-card--featured">
+        <div class="project-card-inner">
+          <div class="project-number">01</div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">Full-Stack Application</span>
+            </div>
+            <h3 class="project-title"><a href="data-cleaner.html" style="color:inherit;text-decoration:none;">Data Cleaner & Visualiser</a></h3>
+            <p class="project-description">A fast, browser-based data-cleansing and visualization workspace that bridges the gap between fragile spreadsheets and tedious custom scripts. Users can upload CSV or XLSX files, run an automatic initial clean, then apply over 40 individual cleaning functions with undo, draft history, and Neon database persistence. The platform features AI-powered chart generation with 11 chart types, real-time data search, and a natural-language function search bar where users describe what they want in plain English.</p>
+            <p class="project-description">Built to solve the real problem of data preparation inefficiency, this project combines the speed of programmatic cleaning with an intuitive, code-free interface. It supports Google Sign-In via Firebase, serverless backend functions on Vercel, and persistent storage on Neon Postgres with 15 database tables tracking users, files, versions, and chart data.</p>
+            <div class="project-tech">
+              <span>React 19</span>
+              <span>Vite 8</span>
+              <span>Neon Postgres</span>
+              <span>Firebase Auth</span>
+              <span>Vercel Serverless</span>
+              <span>Recharts</span>
+              <span>Multi-AI</span>
+            </div>
+            <div class="project-links">
+              <a href="data-cleaner.html" class="project-link project-link--details">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                View Details
+              </a>
+              <a href="https://github.com/Hlulani-B/Data-Cleaner" class="project-link" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Source Code
+              </a>
+              <a href="https://data-cleaner-wine.vercel.app" class="project-link project-link--demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: Rihanyo -->
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-number">02</div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">AI-Powered Platform</span>
+            </div>
+            <h3 class="project-title"><a href="rihanyo.html" style="color:inherit;text-decoration:none;">Rihanyo</a></h3>
+            <p class="project-description">A multi-agent, AI-powered appointment booking assistant that connects patients with medical practices through natural conversation. Practices can register and manage appointment requests while an AI admin filter screens incoming requests for relevance before they reach a human. The platform includes a chatbot receptionist that greets visitors, answers common questions, and routes or books appointment requests automatically.</p>
+            <p class="project-description">Built entirely on free-tier services as a solo student project, Rihanyo uses a fallback chain across five AI providers (Cerebras, OpenRouter, Hugging Face, Groq, Gemini) so if one runs dry the system quietly moves to the next. It features location-based practice search, Firebase hosting on Cloud Functions, and Gmail API integration for notifications.</p>
+            <div class="project-tech">
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>Firebase Functions</span>
+              <span>Supabase</span>
+              <span>Gmail API</span>
+              <span>Multi-AI Fallback</span>
+            </div>
+            <div class="project-links">
+              <a href="rihanyo.html" class="project-link project-link--details">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                View Details
+              </a>
+              <a href="https://github.com/Hlulani-B/Rihanyo" class="project-link" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Source Code
+              </a>
+              <a href="https://youtu.be/AynBR9I_Myk" class="project-link project-link--demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Demo Video
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: Digital Logbook -->
+      <article class="project-card project-card--featured">
+        <div class="project-card-inner">
+          <div class="project-number">03</div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">Microservices Architecture</span>
+            </div>
+            <h3 class="project-title"><a href="digital-logbook.html" style="color:inherit;text-decoration:none;">Digital Logbook</a></h3>
+            <p class="project-description">A microservices-based digital logbook application built with a React frontend and four independent Node.js/Express backend services, each running on its own port. The architecture includes an Auth Service for login and signup via Supabase, a Dashboard Service for cross-project summaries and search, a Project Service for entries, timelines, and AI-powered features, and a Profile Service for user profiles and preferences.</p>
+            <p class="project-description">The system uses Supabase for authentication and PostgreSQL database management, with CI/CD pipelines that auto-generate test coverage badges. Each service follows strict architecture rules: project entries stay scoped to their service while the dashboard only shows cross-project summaries. All four backend services are deployed live on Render.</p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>Supabase</span>
+              <span>PostgreSQL</span>
+              <span>Microservices</span>
+              <span>Render</span>
+            </div>
+            <div class="project-links">
+              <a href="digital-logbook.html" class="project-link project-link--details">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                View Details
+              </a>
+              <a href="https://github.com/Hlulani-B/Digital-Logbook" class="project-link" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Source Code
+              </a>
+              <a href="https://digital-logbook-hlulani.onrender.com" class="project-link project-link--demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="https://digital-logbook-documentation-site.onrender.com" class="project-link project-link--docs" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                Documentation
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4: E-Draft -->
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-number">04</div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">AI Productivity Tool</span>
+            </div>
+            <h3 class="project-title"><a href="e-draft.html" style="color:inherit;text-decoration:none;">E-Draft</a></h3>
+            <p class="project-description">An AI-powered email drafting assistant with a premium, Canva-inspired interface. Type a prompt, get a fully drafted email, and send it directly through your authenticated Gmail account. The app uses an open-source LLM (gpt-oss-20b via Groq) for instantly rephrasing, formalizing, or writing emails from scratch.</p>
+            <p class="project-description">Built with React and Vite on the frontend, Firebase Google Sign-In for frictionless one-click authentication, and the Gmail API using OAuth 2.0 access tokens captured at login. Emails send directly through Gmail's REST protocol with proper base64url encoding. The interface features Plus Jakarta Sans and Inter font pairing with responsive input fields and active focus states.</p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>Vite</span>
+              <span>Groq AI</span>
+              <span>Firebase Auth</span>
+              <span>Gmail API</span>
+              <span>OAuth 2.0</span>
+            </div>
+            <div class="project-links">
+              <a href="e-draft.html" class="project-link project-link--details">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                View Details
+              </a>
+              <a href="https://github.com/Hlulani-B/e-draft" class="project-link" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Source Code
+              </a>
+              <a href="https://e-draft-rho.vercel.app" class="project-link project-link--demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="https://youtu.be/YzfwQujoPLM" class="project-link project-link--demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Demo Video
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5: Cortex -->
+      <article class="project-card project-card--featured">
+        <div class="project-card-inner">
+          <div class="project-number">05</div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">AI Productivity Tool</span>
+            </div>
+            <h3 class="project-title"><a href="cortex.html" style="color:inherit;text-decoration:none;">Cortex</a></h3>
+            <p class="project-description">A serverless full-stack app that transforms hours of video and audio lectures into clean, structured markdown notes. Drop in an audio or video file, or paste a YouTube link directly, and Cortex uses Gemini 2.5 Flash to generate organized notes from the content. The notes get rendered into a styled PDF you can preview right in the browser or download.</p>
+            <p class="project-description">Built with React and Vite, Cortex handles MP3, WAV, MP4, and MOV uploads with a 55-minute duration limit to stay within the model's token constraints. Larger media files go through the Gemini File API using resumable upload. YouTube integration uses the YouTube Data API v3 to fetch video duration. The layout uses Archivo Black and Inter fonts with fully responsive styling.</p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>Vite</span>
+              <span>Gemini 2.5 Flash</span>
+              <span>YouTube API</span>
+              <span>PDF Generation</span>
+              <span>Firebase</span>
+            </div>
+            <div class="project-links">
+              <a href="cortex.html" class="project-link project-link--details">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                View Details
+              </a>
+              <a href="https://github.com/Hlulani-B/Cortex" class="project-link" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Source Code
+              </a>
+              <a href="https://youtu.be/OrD9pvzhj40" class="project-link project-link--demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Demo Video
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 6: Derma -->
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-number">06</div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">AI Health Application</span>
+            </div>
+            <h3 class="project-title"><a href="derma.html" style="color:inherit;text-decoration:none;">Derma</a></h3>
+            <p class="project-description">An AI-powered skin analysis and product recommender that examines your skin in real time through your webcam. Take a photo straight from your browser using WebRTC, and the image gets analysed by Google Gemini 2.5 Flash Lite, which determines your skin type, main concerns, and which ingredients would actually help. It then generates personalised skincare formulation recommendations based on that analysis.</p>
+            <p class="project-description">The app searches for real products matching those recommendations and pulls in product images using Cheerio HTML parsing, so you see actual products rather than just a text list. The backend runs on Node.js with the AI and vision work handled by Gemini's lightweight model.</p>
+            <div class="project-tech">
+              <span>Node.js</span>
+              <span>Gemini 2.5 Flash Lite</span>
+              <span>WebRTC</span>
+              <span>Cheerio</span>
+              <span>HTML/CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="derma.html" class="project-link project-link--details">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                View Details
+              </a>
+              <a href="https://github.com/Hlulani-B/Derma" class="project-link" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Source Code
+              </a>
+              <a href="https://youtu.be/nNA5UwIJfLU" class="project-link project-link--demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Demo Video
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 7: Dira -->
+      <article class="project-card project-card--featured">
+        <div class="project-card-inner">
+          <div class="project-number">07</div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">Local-First Task Manager</span>
+            </div>
+            <h3 class="project-title"><a href="dira.html" style="color:inherit;text-decoration:none;">Dira</a></h3>
+            <p class="project-description">A quiet place to keep track of what needs doing. Add a task, tick it off, move on with your day. A single-user, local-first task manager built with Next.js 16, React 19, and better-sqlite3. There are no accounts and nothing is deployed anywhere. You clone the repo, run it, and your tasks are stored in a SQLite file on your own machine.</p>
+            <p class="project-description">Tasks can be tagged with colour-coded topics (Grocery, Assignments, Work, Health, Projects), move through a three-status workflow (Todo, In Progress, Complete), and are archived rather than deleted. The app features computed overdue status, TypeScript type safety, Tailwind CSS styling, and a Jest test suite that runs against a throwaway database to never touch real data.</p>
+            <div class="project-tech">
+              <span>Next.js 16</span>
+              <span>React 19</span>
+              <span>TypeScript</span>
+              <span>better-sqlite3</span>
+              <span>Tailwind CSS</span>
+              <span>Jest</span>
+            </div>
+            <div class="project-links">
+              <a href="dira.html" class="project-link project-link--details">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                View Details
+              </a>
+              <a href="https://github.com/Hlulani-B/Dira" class="project-link" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">I am always open to new opportunities, collaborations, and conversations about technology. Feel free to reach out.</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-card">
+          <div class="contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <a href="mailto:baloyihlulani91@gmail.com">baloyihlulani91@gmail.com</a>
+              <a href="mailto:baloyihlulani15@gmail.com">baloyihlulani15@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a-3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <div class="contact-details">
+              <h4>GitHub</h4>
+              <a href="https://github.com/Hlulani-B" target="_blank" rel="noopener">github.com/Hlulani-B</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/></svg>
+            <div class="contact-details">
+              <h4>University</h4>
+              <p>University of the Witwatersrand</p>
+              <p class="contact-sub">BSc Computer Science | 2023 - 2026</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <p>Johannesburg, South Africa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">Designed and built by Hlulani Baloyi</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

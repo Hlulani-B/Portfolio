@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rihanyo — Hlulani Baloyi</title>
+  <link rel="stylesheet" href="project-styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-maroon">
+
+  <div class="project-topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back
+      </a>
+      <span class="topbar-logo">Hlulani</span>
+    </div>
+  </div>
+
+  <section class="project-hero">
+    <span class="hero-label">AI-Powered Platform</span>
+    <h1>Rihanyo</h1>
+    <p class="hero-subtitle">A multi-agent, AI-powered appointment booking assistant that connects patients with medical practices through natural conversation. Built entirely on free-tier infrastructure as a solo student project, with a fallback chain across five AI providers.</p>
+    <div class="hero-links">
+      <a href="https://github.com/Hlulani-B/Rihanyo" class="hero-link" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        Source Code
+      </a>
+      <a href="https://youtu.be/AynBR9I_Myk" class="hero-link hero-link-outline" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Demo Video
+      </a>
+    </div>
+  </section>
+
+  <div class="project-content container">
+
+    <div class="project-section">
+      <h2 class="section-heading">Overview</h2>
+      <p class="overview-text">Rihanyo is built around two sides of the same problem: making it easy for a practice to register and receive appointment requests, and making sure the admin is not stuck manually reading through spam or irrelevant submissions. New requests are automatically screened by an AI filter before they are surfaced to the admin dashboard.</p>
+      <p class="overview-text">The platform includes a chatbot receptionist that greets visitors, answers common questions, and routes or books appointment requests automatically. A WhatsApp AI receptionist is in development to allow patients to book via WhatsApp Business API. Location-based search lets users find the closest registered practice.</p>
+      <p class="overview-text">Built entirely on free-tier services as a solo student project with no budget for paid API access, Rihanyo uses a fallback chain across five AI providers (Cerebras, OpenRouter, Hugging Face, Groq, Gemini) so if one runs dry the system quietly moves to the next without the patient ever noticing a gap in service.</p>
+    </div>
+
+    <div class="project-section">
+      <h2 class="section-heading">Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Practice Registration</h4>
+          <p>Practices can sign up and register their details including location, specialties, and contact information through a streamlined onboarding flow.</p>
+        </div>
+        <div class="feature-card">
+          <h4>AI Request Filtering</h4>
+          <p>New requests are checked for relevance by an LLM-based filter that rejects unrelated or nonsensical submissions before they reach the admin queue.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Admin Dashboard</h4>
+          <p>View and manage incoming appointment requests with AI-flagged relevance indicators. Filter, approve, or reject submissions from a single interface.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Chatbot Receptionist</h4>
+          <p>AI-powered chat widget on the website that greets visitors, answers common questions about the practice, and routes or books appointment requests.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Nearest Location Search</h4>
+          <p>Location-based search so patients can find the closest registered practice using geolocation and radius filtering.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Multi-Provider AI Fallback</h4>
+          <p>Five AI providers chained as fallbacks with a Supabase cooldown table so failed providers are skipped for minutes, surviving cold starts.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="section-heading">Tech Stack</h2>
+      <div class="tech-stack">
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">Express</span>
+        <span class="tech-tag">Firebase Functions</span>
+        <span class="tech-tag">Firebase Auth</span>
+        <span class="tech-tag">Supabase</span>
+        <span class="tech-tag">Firestore</span>
+        <span class="tech-tag">Gmail API</span>
+        <span class="tech-tag">Cerebras</span>
+        <span class="tech-tag">OpenRouter</span>
+        <span class="tech-tag">Hugging Face</span>
+        <span class="tech-tag">Groq</span>
+        <span class="tech-tag">Gemini</span>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="section-heading">Engineering Challenges</h2>
+      <div class="challenges-list">
+        <div class="challenge-card">
+          <h4>The Agent Would Go Silent</h4>
+          <p>The assistant would sometimes stop responding with no error or crash. This came from broken async/await chains, JSON.parse blowing up on messy LLM output, and code paths that ended without calling reply(). Fixed by wrapping every parser in try/catch with proper logging and adding a fallback response.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Treating Questions Like Form Fields</h4>
+          <p>If someone asked "can you give me options?" the agent replied with canned form-filling text instead of answering. Every message was funnelled into the structured data extraction agent. Fixed by adding proper intent handling so queries get routed to the right place before falling back to form filling.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Running Out of Tokens Mid-Conversation</h4>
+          <p>Multiple agents per message with full conversation history sent each time burned through the daily free-tier quota in a single afternoon. Fixed by capping history to recent entries, scoping the clash checker to one doctor, adding minimum gaps between AI calls, and making retry logic recognise daily caps versus normal rate limits.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Hallucinated Practice Details</h4>
+          <p>The assistant answered questions about doctors with plausible but invented details. The practice information essay was falling outside the trimmed context window, so the AI filled the gap with fiction. Fixed by always fetching the practice essay fresh and explicitly instructing the AI to only answer from verified data.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Dates Like "9am Tomorrow"</h4>
+          <p>People do not speak in ISO format. The database only accepts proper timestamp strings, so natural dates were failing on insert. Fixed by injecting the current date and time into the agent's context so the model always has a reference point for converting to clean ISO 8601 UTC strings.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-bottom-nav">
+      <a href="data-cleaner.html" class="project-nav-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Data Cleaner
+      </a>
+      <a href="index.html" class="project-nav-link">All Projects</a>
+      <a href="digital-logbook.html" class="project-nav-link">
+        Digital Logbook
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer class="project-footer">
+    <div class="container">
+      <p>Designed and built by Hlulani Baloyi</p>
+    </div>
+  </footer>
+
+  <script>
+    var topbar = document.querySelector('.project-topbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) { topbar.classList.add('scrolled'); }
+      else { topbar.classList.remove('scrolled'); }
+    });
+  </script>
+</body>
+</html>

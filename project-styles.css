@@ -1,0 +1,603 @@
+/* ============================================
+   PROJECT PAGE STYLES
+   Alternating: Pink theme / Maroon theme
+   ============================================ */
+
+/* === RESET & BASE === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #F9C9D9;
+  --pink-light: #FADCE6;
+  --pink-pale: #FDF0F4;
+  --maroon: #7A1F2B;
+  --maroon-dark: #5A1520;
+  --maroon-deeper: #3D0E16;
+  --white: #FFFFFF;
+  --off-white: #FFF9FA;
+  --text-dark: #2B1B14;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================================
+   PINK THEME (Data-Cleaner, Digital-Logbook, Cortex)
+   ============================================ */
+.theme-pink {
+  background: var(--pink-pale);
+  color: var(--text-dark);
+}
+
+.theme-pink .project-hero {
+  background: linear-gradient(160deg, var(--pink) 0%, var(--pink-light) 100%);
+  border-bottom: 4px solid var(--maroon);
+}
+
+.theme-pink .project-hero .hero-label {
+  color: var(--maroon);
+  background: rgba(122, 31, 43, 0.08);
+}
+
+.theme-pink .project-hero h1 {
+  color: var(--maroon);
+}
+
+.theme-pink .project-hero .hero-subtitle {
+  color: var(--maroon-dark);
+}
+
+.theme-pink .section-heading {
+  color: var(--maroon);
+}
+
+.theme-pink .section-heading::after {
+  background: var(--pink);
+}
+
+.theme-pink .overview-text {
+  color: var(--text-dark);
+}
+
+.theme-pink .feature-card {
+  background: var(--white);
+  border: 1px solid rgba(122, 31, 43, 0.08);
+}
+
+.theme-pink .feature-card:hover {
+  border-color: var(--maroon);
+  box-shadow: 0 8px 30px rgba(122, 31, 43, 0.08);
+}
+
+.theme-pink .feature-card h4 {
+  color: var(--maroon);
+}
+
+.theme-pink .feature-card p {
+  color: #555;
+}
+
+.theme-pink .tech-tag {
+  background: var(--white);
+  color: var(--maroon);
+  border: 1px solid rgba(122, 31, 43, 0.12);
+}
+
+.theme-pink .tech-tag:hover {
+  background: var(--maroon);
+  color: var(--pink);
+}
+
+.theme-pink .challenge-card {
+  background: var(--white);
+  border-left: 3px solid var(--pink);
+}
+
+.theme-pink .challenge-card h4 {
+  color: var(--maroon);
+}
+
+.theme-pink .challenge-card p {
+  color: #555;
+}
+
+.theme-pink .project-nav-link {
+  color: var(--maroon);
+  border-color: var(--maroon);
+}
+
+.theme-pink .project-nav-link:hover {
+  background: var(--maroon);
+  color: var(--pink);
+}
+
+.theme-pink .back-link {
+  color: var(--maroon);
+}
+
+.theme-pink .back-link:hover {
+  color: var(--pink);
+}
+
+/* ============================================
+   MAROON THEME (Rihanyo, E-Draft, Derma)
+   ============================================ */
+.theme-maroon {
+  background: var(--maroon);
+  color: var(--white);
+}
+
+.theme-maroon .project-hero {
+  background: linear-gradient(160deg, var(--maroon-deeper) 0%, var(--maroon-dark) 100%);
+  border-bottom: 4px solid var(--pink);
+}
+
+.theme-maroon .project-hero .hero-label {
+  color: var(--pink);
+  background: rgba(249, 201, 217, 0.1);
+}
+
+.theme-maroon .project-hero h1 {
+  color: var(--white);
+}
+
+.theme-maroon .project-hero .hero-subtitle {
+  color: var(--pink-light);
+}
+
+.theme-maroon .section-heading {
+  color: var(--pink);
+}
+
+.theme-maroon .section-heading::after {
+  background: var(--pink);
+}
+
+.theme-maroon .overview-text {
+  color: var(--pink-light);
+}
+
+.theme-maroon .feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.theme-maroon .feature-card:hover {
+  border-color: var(--pink);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.theme-maroon .feature-card h4 {
+  color: var(--pink);
+}
+
+.theme-maroon .feature-card p {
+  color: var(--pink-light);
+}
+
+.theme-maroon .tech-tag {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--pink);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-maroon .tech-tag:hover {
+  background: var(--pink);
+  color: var(--maroon-dark);
+}
+
+.theme-maroon .challenge-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--pink);
+}
+
+.theme-maroon .challenge-card h4 {
+  color: var(--pink);
+}
+
+.theme-maroon .challenge-card p {
+  color: var(--pink-light);
+}
+
+.theme-maroon .project-nav-link {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.theme-maroon .project-nav-link:hover {
+  background: var(--pink);
+  color: var(--maroon-dark);
+  border-color: var(--pink);
+}
+
+.theme-maroon .back-link {
+  color: var(--pink);
+}
+
+.theme-maroon .back-link:hover {
+  color: var(--pink);
+}
+
+/* ============================================
+   SHARED PROJECT PAGE LAYOUT
+   ============================================ */
+
+/* === TOP BAR === */
+.project-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: transparent;
+  transition: all 0.4s ease;
+}
+
+.project-topbar.scrolled {
+  backdrop-filter: blur(12px);
+}
+
+.theme-pink .project-topbar {
+  background: rgba(253, 240, 244, 0.9);
+}
+
+.theme-pink .project-topbar.scrolled {
+  box-shadow: 0 2px 20px rgba(122, 31, 43, 0.08);
+}
+
+.theme-maroon .project-topbar {
+  background: rgba(61, 14, 22, 0.9);
+}
+
+.theme-maroon .project-topbar.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.topbar-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.back-link svg {
+  transition: transform 0.3s ease;
+}
+
+.back-link:hover svg {
+  transform: translateX(-4px);
+}
+
+.topbar-logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.theme-pink .topbar-logo { color: var(--maroon); }
+.theme-maroon .topbar-logo { color: var(--pink); }
+
+/* === HERO === */
+.project-hero {
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero-label {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.project-hero h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.theme-pink .hero-link {
+  background: var(--maroon);
+  color: var(--pink);
+}
+
+.theme-pink .hero-link:hover {
+  background: var(--maroon-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(122, 31, 43, 0.2);
+}
+
+.theme-pink .hero-link-outline {
+  background: transparent;
+  color: var(--maroon);
+  border: 2px solid var(--maroon);
+}
+
+.theme-pink .hero-link-outline:hover {
+  background: var(--maroon);
+  color: var(--white);
+}
+
+.theme-maroon .hero-link {
+  background: var(--pink);
+  color: var(--maroon-dark);
+}
+
+.theme-maroon .hero-link:hover {
+  background: var(--pink-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 201, 217, 0.3);
+}
+
+.theme-maroon .hero-link-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.theme-maroon .hero-link-outline:hover {
+  background: var(--white);
+  color: var(--maroon);
+}
+
+/* === CONTENT SECTIONS === */
+.project-content {
+  padding: 4rem 0;
+}
+
+.project-section {
+  margin-bottom: 4rem;
+}
+
+.section-heading {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* === OVERVIEW === */
+.overview-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+
+/* === FEATURES GRID === */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+}
+
+.feature-card h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+/* === TECH STACK === */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+/* === CHALLENGES === */
+.challenges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.challenge-card {
+  padding: 1.5rem 1.75rem;
+  border-radius: 8px;
+}
+
+.challenge-card h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.challenge-card p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* === BOTTOM NAV === */
+.project-bottom-nav {
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(128, 128, 128, 0.15);
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.project-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: 2px solid;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-nav-link:hover {
+  transform: translateY(-2px);
+}
+
+/* === FOOTER === */
+.project-footer {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.theme-pink .project-footer {
+  background: var(--maroon);
+  color: var(--pink-light);
+}
+
+.theme-maroon .project-footer {
+  background: var(--maroon-deeper);
+  color: var(--pink-light);
+}
+
+.project-footer p {
+  font-size: 0.82rem;
+  opacity: 0.7;
+  letter-spacing: 1px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .project-hero {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .project-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-bottom-nav {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .project-nav-link {
+    justify-content: center;
+  }
+}

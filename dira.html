@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dira — Hlulani Baloyi</title>
+  <link rel="stylesheet" href="project-styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-pink">
+
+  <!-- Top Bar -->
+  <div class="project-topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back
+      </a>
+      <span class="topbar-logo">Hlulani</span>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <span class="hero-label">Local-First Task Manager</span>
+    <h1>Dira</h1>
+    <p class="hero-subtitle">A quiet place to keep track of what needs doing. Add a task, tick it off, move on with your day. A single-user, local-first todo application with SQLite persistence, topic tagging, and a clean terminal-inspired interface.</p>
+    <div class="hero-links">
+      <a href="https://github.com/Hlulani-B/Dira" class="hero-link" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        Source Code
+      </a>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="project-content container">
+
+    <!-- Overview -->
+    <div class="project-section">
+      <h2 class="section-heading">Overview</h2>
+      <p class="overview-text">Dira is a single-user, local-first task manager built as part of the COMS3011A Software Design course at the University of the Witwatersrand. There are no accounts, no cloud sync, and nothing deployed anywhere. You clone the repo, run it, and your tasks are stored in a SQLite file on your own machine. The name "Dira" comes from the Setswana word for a quiet, focused place.</p>
+      <p class="overview-text">The app uses Next.js 16 with file-based routing, React 19 for the UI, better-sqlite3 for synchronous embedded database access, and Tailwind CSS for styling. TypeScript enforces type safety across the codebase, and Jest runs the test suite against a throwaway database so tests never touch real data. The result is a minimal, distraction-free task manager that respects the local-first philosophy.</p>
+    </div>
+
+    <!-- Features -->
+    <div class="project-section">
+      <h2 class="section-heading">Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Local-First SQLite</h4>
+          <p>Built on better-sqlite3, the database runs embedded in the same process. No separate database server to install or manage. The SQLite file is created and seeded automatically on first run.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Topic Tagging</h4>
+          <p>Tasks can be tagged with colour-coded topics like Grocery, Assignments, Work, Health, and Projects. Each topic has its own colour for quick visual identification in the UI.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Three-Status Workflow</h4>
+          <p>Tasks move through three states: Todo, In Progress, and Complete. The status is enforced through a TypeScript type union, preventing invalid state transitions at compile time.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Archive Without Delete</h4>
+          <p>Completed tasks are archived rather than deleted. An archive flag (0 or 1) filters tasks out of the active list while preserving the full history in the database.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Computed Overdue Status</h4>
+          <p>Overdue is never stored in the database. A task counts as overdue if its due date has passed and its status is not Complete, calculated at read time rather than persisted.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Isolated Test Suite</h4>
+          <p>Jest tests run against a separate throwaway database, so running tests never touches your real tasks. Covers CRUD operations, archiving behaviour, and overdue computation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="project-section">
+      <h2 class="section-heading">Tech Stack</h2>
+      <div class="tech-stack">
+        <span class="tech-tag">Next.js 16</span>
+        <span class="tech-tag">React 19</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">better-sqlite3</span>
+        <span class="tech-tag">Tailwind CSS</span>
+        <span class="tech-tag">Jest</span>
+        <span class="tech-tag">ts-jest</span>
+      </div>
+    </div>
+
+    <!-- Database Design -->
+    <div class="project-section">
+      <h2 class="section-heading">Database Design</h2>
+      <div class="challenges-list">
+        <div class="challenge-card">
+          <h4>Task Table</h4>
+          <p>The task table stores todo items with fields for title, description, due_date, topic, status (defaulting to "Todo"), and archive (defaulting to 0 for active). The topic column stores the topic name directly rather than a foreign key, keeping queries simple at the cost of not cascading renames.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Topics Table</h4>
+          <p>The topics table holds a unique name and colour for each category. It is seeded with five defaults (Grocery, Assignments, Work, Health, Projects) on first creation. Each topic colour drives the visual styling in the UI.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Design Trade-offs</h4>
+          <p>Storing topic name instead of a foreign key ID is a deliberate simplicity trade-off. Archiving uses a flag rather than deletion, matching the requirement that tasks can be archived but never deleted. Overdue status is computed, not stored, keeping the schema clean.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Lessons -->
+    <div class="project-section">
+      <h2 class="section-heading">Key Lessons</h2>
+      <div class="challenges-list">
+        <div class="challenge-card">
+          <h4>Local-First Simplicity</h4>
+          <p>Building without authentication, cloud sync, or deployment constraints forces you to focus on the core product: clean data modelling, a thoughtful UI, and correct behaviour. Sometimes less infrastructure means better software.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Embedded Database Patterns</h4>
+          <p>better-sqlite3 runs synchronously in the same process, which is ideal for a local-first app. Understanding the trade-offs between embedded and client-server databases deepened the understanding of when each approach fits.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Test Isolation</h4>
+          <p>Running tests against a throwaway database rather than the dev database is a pattern that prevents accidental data loss and makes tests reproducible. Each test suite gets a clean slate.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="project-bottom-nav">
+      <a href="derma.html" class="project-nav-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Derma
+      </a>
+      <a href="index.html" class="project-nav-link">All Projects</a>
+      <a href="data-cleaner.html" class="project-nav-link">
+        Data Cleaner
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="project-footer">
+    <div class="container">
+      <p>Designed and built by Hlulani Baloyi</p>
+    </div>
+  </footer>
+
+  <script>
+    var topbar = document.querySelector('.project-topbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) { topbar.classList.add('scrolled'); }
+      else { topbar.classList.remove('scrolled'); }
+    });
+  </script>
+</body>
+</html>
