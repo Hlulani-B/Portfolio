@@ -50,6 +50,75 @@
     </div>
 
     <div class="project-section">
+      <h2 class="section-heading">My Contributions</h2>
+      <p class="overview-text">Digital Logbook was a team project, and my role was full-stack across the entire repository. Over roughly seven weeks (Sprints 1-3) I made <strong>648 non-merge commits</strong> — 281 fixes to 134 features, a ratio that tells the real story: most of the work was making features actually survive production. I personally built the deployment infrastructure, the database schema, the theming and onboarding system, the AI natural-language pipeline, the local-first caching architecture, the notes system, and the documentation site.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Monorepo & Deployment Infrastructure</h4>
+          <p>Set up the monorepo structure, the first Gitea Actions CI pipeline, the Render Blueprint (render.yaml) for all four microservices, Gitea Pages, and keep-alive cron workflows that ping Render and Supabase to prevent free-tier cold starts.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Database Schema & Soft Deletes</h4>
+          <p>Designed the Supabase schema bottom-up (users, projects, fields, entries), migrated identity from UUIDs to email as the primary key so Google sign-in maps directly to rows, added cascade deletes, and implemented soft deletes with a grace-period account restore flow.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Theme System & Onboarding</h4>
+          <p>Built the entire theming engine — light, dark, pastel-vintage, and OLED palettes, font and corner-style pickers, and an avatar picker — plus the five-step onboarding flow (Profile, Avatar, Tone, Theme, Frequency) with live theme previews.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Natural-Language Quick Add & Voice</h4>
+          <p>Type or say "math due friday high priority" and the AI files it. Built the multi-provider AI fallback chain (OpenRouter, HuggingFace, Gemini, Cerebras, Groq), server-side date extraction, multi-project splitting, and voice input via the Web Speech API feeding the same pipeline.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Local-First Caching Architecture</h4>
+          <p>The project's spine: evolved caching from per-page stale-while-revalidate to IndexedDB-first with event subscriptions, then to sql.js (SQLite in WebAssembly) with a central sync service, optimistic writes, and an offline mutation queue that replays with toasts.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Dashboard Architecture</h4>
+          <p>Rebuilt the dashboard from a feed into a sectioned workspace: drawer navigation, Due Soon sections, EntryBox cards, card/checklist/board view toggles, time tracking with live durations, streaks, and AI-powered stats reflections.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Notes System</h4>
+          <p>Per-entry personal notes with client-side image compression, Supabase Storage uploads, a context-based slide-over panel that keeps the page behind it visible, soft-delete support, and full offline-first caching.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Testing, CI & Documentation Site</h4>
+          <p>Grew service test suites to 135+ passing tests, added integration workflows with visible results and auto-generated coverage badges, split CI four ways (unit/integration × frontend/backend), and built the MkDocs documentation site with architecture docs and stakeholder evidence.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="section-heading">Hard-Won Lessons</h2>
+      <div class="challenges-list">
+        <div class="challenge-card">
+          <h4>Mocks Must Match Real Behaviour</h4>
+          <p>A Supabase mock that rejected where the real client resolves with null data caused 105 test failures in a single day — all tracing to one root cause. Fixed the mocks to mirror reality and every suite went green.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>IndexedDB Versions Only Move Forward</h4>
+          <p>A database version bump left browsers stuck on a never-resolving open request and froze the app. You cannot downgrade a user's browser — the fix was a forward bump plus a 5-second open timeout so an IndexedDB hang can never freeze the UI again.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Never Let a CDN Be Load-Bearing</h4>
+          <p>The sql.js WASM file 404'd from its CDN, killing the offline mode it powered. The fix: bundle the WASM locally. If a feature is your offline story, it cannot depend on the network.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Refetch-After-Write Loses to Concurrency</h4>
+          <p>Re-fetching after a mutation raced with SSE events and overwrote fresh rows with stale server data. The rule became: use the mutation response body (or a sequence-ref guard), never a blind re-fetch.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Windows Hides Linux-Fatal Bugs</h4>
+          <p>A case-insensitive filesystem masked bad import paths (field.js vs fields.js) that crash-looped Render's Linux builds, and a Windows editor silently saved a file as UTF-16, killing Node on boot. "Works locally" is not proof.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Cache-Control Is a Response Header</h4>
+          <p>Setting Cache-Control as a request header tripped CORS preflight on every service and broke all syncs — a one-line mistake with an app-wide blast radius.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
       <h2 class="section-heading">Key Features</h2>
       <div class="features-grid">
         <div class="feature-card">

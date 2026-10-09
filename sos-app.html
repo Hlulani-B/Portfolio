@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOS App — Hlulani Baloyi</title>
+  <link rel="stylesheet" href="project-styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-pink">
+
+  <div class="project-topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back
+      </a>
+      <span class="topbar-logo">Hlulani</span>
+    </div>
+  </div>
+
+  <section class="project-hero">
+    <span class="hero-label">Full-Stack Safety Platform</span>
+    <h1>SOS App</h1>
+    <p class="hero-subtitle">The cloud-backed evolution of Safe — a covert safety tool disguised as a weather app. One-tap hidden triggers record audio/video or alert trusted contacts with live location, while a map shows pals sharing their positions with real addresses and local weather.</p>
+    <div class="hero-links">
+      <a href="https://github.com/Hlulani-B/SOS_APP" class="hero-link" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        Source Code
+      </a>
+      <a href="https://sos-web-gdf3.onrender.com" class="hero-link hero-link-outline" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Live Demo
+      </a>
+    </div>
+  </section>
+
+  <div class="project-content container">
+
+    <div class="project-section">
+      <h2 class="section-heading">Overview</h2>
+      <p class="overview-text">A panic button only works if the person who needs it can reach it without the attacker noticing. Existing safety apps betray themselves: a red SOS icon, a "Send help" button, a screen that screams victim if a phone is grabbed and looked at. SOS App is the cloud-backed rewrite of the original offline Safe prototype — same disguise philosophy, but with cross-device trusted contacts and live location sharing powered by a real backend.</p>
+      <p class="overview-text">The chosen disguise is a weather app — universally boring and plausible to open at any hour. The weather screen lists ordinary cities, and three of them carry a small coloured dot: Johannesburg (olive) starts video, Durban (yellow) starts audio, Cape Town (pink) sends an alert with live location. A single tap loads that city's forecast and fires the hidden action; a red chip is the only visible state. A second Location screen shows trusted contacts ("pals") on a map, each resolved to a real street address with the current weather there.</p>
+    </div>
+
+    <div class="project-section">
+      <h2 class="section-heading">Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Weather-App Disguise Triggers</h4>
+          <p>Three city chips hide the triggers. The dot colour is the only label, nothing is written on the buttons, and the screen looks identical to anyone else — tapping the same chip again stops the recording and sends what was captured.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Live Location Sharing</h4>
+          <p>The share loop lives in a module-level singleton, not a component, so it keeps running when the Location page unmounts. The sharing state is mirrored to localStorage and resumed on boot, so a refresh never drops the share.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Pals & Invites System</h4>
+          <p>Trusted contacts are chosen by her: send, accept, and remove invites, with pal profiles (names and avatars) merged with their live coordinates — pals without coordinates simply render as offline.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Map with Real Addresses & Weather</h4>
+          <p>A react-leaflet map constrained to South Africa shows each online pal as an avatar marker. Address and weather are assembled from three free sources: Open-Meteo for weather, BigDataCloud for town/province, and a rate-limited Nominatim queue for the street.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Router-less by Design</h4>
+          <p>No router on purpose: a localStorage view state machine means a refresh lands back on the same screen and the address bar never carries a hint of what the app is. Cover must survive scrutiny — tab title, branding, and every string stay innocuous.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Split Auth & Data Backends</h4>
+          <p>Firebase handles only Google sign-in and the session (popup with redirect fallback); Neon Postgres is the sole store of app data. The email address is the bridge — after login the app checks whether the account is new.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="section-heading">Tech Stack</h2>
+      <div class="tech-stack">
+        <span class="tech-tag">React 19</span>
+        <span class="tech-tag">Vite 8</span>
+        <span class="tech-tag">Express 5</span>
+        <span class="tech-tag">Neon Postgres</span>
+        <span class="tech-tag">Firebase Auth</span>
+        <span class="tech-tag">React-Leaflet</span>
+        <span class="tech-tag">Open-Meteo</span>
+        <span class="tech-tag">Nominatim</span>
+        <span class="tech-tag">BigDataCloud</span>
+        <span class="tech-tag">Render Blueprint</span>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="section-heading">Architecture & Challenges</h2>
+      <div class="challenges-list">
+        <div class="challenge-card">
+          <h4>Allowlisted Function Dispatcher API</h4>
+          <p>Instead of one endpoint per operation, the Express API exposes modules at POST /api/module-name taking a function name and positional params. Every route holds an explicit allowlist of callable names, rejects cross-module names, and blocks prototype keys — with a trailing error handler keeping every response JSON.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>The Share Loop Died on Navigation</h4>
+          <p>With no router, switching screens unmounted the Location page and tore down the setInterval inside its useEffect — sharing silently stopped exactly when the user was least likely to notice. Moving the timer into a module-level singleton, then persisting it across refreshes, fixed it.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Free Geocoding APIs Each Have a Catch</h4>
+          <p>BigDataCloud's free tier never returns street names; Nominatim does but throttles to 1 request/second and blocks generic user-agents. The address is a three-source chain with a serialised Nominatim queue (~1100ms spacing) and graceful degradation when a field is missing.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Windows Hides Bugs That Break Linux</h4>
+          <p>A folder committed as api/Routes/ but imported as ./routes/ ran fine on Windows and crash-looped on Render's Linux with ERR_MODULE_NOT_FOUND. Fixed with a two-step git mv case rename — a local "it works" is not proof of case-correctness.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>The Render Blueprint Is Stricter Than It Looks</h4>
+          <p>A static site is type: web with runtime: static and a staticPublishPath — type: static is not valid at all. And sync: false env vars don't fail; the blueprint just sits "Running" while it waits for secrets to be typed into the dashboard.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Postgres Types Are Not What They Look Like</h4>
+          <p>NUMERIC coordinates come back from the driver as strings ("-33.920000"), needing an explicit Number() before plotting. And because the dispatcher passes params positionally, array arguments must be nested or Postgres throws a malformed array literal.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-bottom-nav">
+      <a href="sos.html" class="project-nav-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Safe (SOS)
+      </a>
+      <a href="index.html" class="project-nav-link">All Projects</a>
+      <a href="data-cleaner.html" class="project-nav-link">
+        Data Cleaner
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer class="project-footer">
+    <div class="container">
+      <p>Designed and built by Hlulani Baloyi</p>
+    </div>
+  </footer>
+
+  <script>
+    var topbar = document.querySelector('.project-topbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) { topbar.classList.add('scrolled'); }
+      else { topbar.classList.remove('scrolled'); }
+    });
+  </script>
+</body>
+</html>

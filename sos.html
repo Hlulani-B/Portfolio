@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe (SOS) — Hlulani Baloyi</title>
+  <link rel="stylesheet" href="project-styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-maroon">
+
+  <div class="project-topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back
+      </a>
+      <span class="topbar-logo">Hlulani</span>
+    </div>
+  </div>
+
+  <section class="project-hero">
+    <span class="hero-label">Covert Safety Application</span>
+    <h1>Safe (SOS)</h1>
+    <p class="hero-subtitle">A covert emergency alert system for survivors of gender-based violence. It hides inside three everyday apps — a calculator, a weather app, and a clothing boutique — where hidden triggers quietly record audio or video, or send an SOS with live GPS location straight to emergency contacts.</p>
+    <div class="hero-links">
+      <a href="https://github.com/Hlulani-B/SOS" class="hero-link" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        Source Code
+      </a>
+      <a href="https://sos-g4eh.vercel.app/" class="hero-link hero-link-outline" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Live Demo
+      </a>
+    </div>
+  </section>
+
+  <div class="project-content container">
+
+    <div class="project-section">
+      <h2 class="section-heading">Overview</h2>
+      <p class="overview-text">Almost every safety product on the market shares one fatal assumption: that the victim can openly reach for her phone and use a visible emergency app. In a coercive, controlling environment that assumption collapses — a panic-button app is a neon sign an abuser finds in seconds, and visible help-seeking is punished. Safe is built around the real problem: victims need a way to alert trusted contacts and document abuse in real time, using a device the abuser can inspect at any moment, without any visible sign the phone is anything other than ordinary.</p>
+      <p class="overview-text">Safe is a single web app that presents three fully functional disguises. Each disguise is a real, working app; the safety triggers are woven into its normal interface. An olive green element captures video, a yellow one captures audio, and a pink one sends an SOS alert with live GPS location. Tap once to start, tap again to stop — the capture is saved to the device and emailed to contacts she chose herself. When a trigger is active the button turns red and nothing else changes: no labels, no popups, no sounds. Even the browser tab only ever shows the current disguise's name.</p>
+    </div>
+
+    <div class="project-section">
+      <h2 class="section-heading">Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Three Working Disguises</h4>
+          <p>A working calculator, a real weather app, and a chic clothing boutique ("Maison"). There is no emergency mode screen, no special gesture, and nothing to hide when someone looks over her shoulder.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Colour-Coded Trigger System</h4>
+          <p>Olive captures video, yellow captures audio, pink sends an SOS with live GPS. Triggers are styled as ordinary interface elements — calculator keys, weather UI, shopping buttons — with frozen labels so colour is the only signal.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Red-Only Activation State</h4>
+          <p>When a trigger is active the button turns red — nothing else changes. No "Recording" or "Sent" text, no alerts, no sounds. The rule: if a piece of UI state would survive a screenshot in the wrong hands, it must be invisible.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Email Alerts with Attachments</h4>
+          <p>The SOS email carries her name, her pre-written message, and a Google Maps pin of her live location. Audio/video alerts attach the recording as a playable MP4/M4A file, and the file is also saved on the device.</p>
+        </div>
+        <div class="feature-card">
+          <h4>No-Server Privacy Architecture</h4>
+          <p>No accounts, no server, no database. Profile and contacts live in the device's localStorage only — nothing to hack, nothing to subpoena, and nothing linking her to the service. Alerts fire silently while the disguise stays on screen.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Server-Side Key Handling</h4>
+          <p>The Resend email API key never exists in the browser bundle. Locally a Vite dev-server proxy attaches it; in production a Vercel serverless function does — client code is identical in both environments.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="section-heading">Tech Stack</h2>
+      <div class="tech-stack">
+        <span class="tech-tag">React 19</span>
+        <span class="tech-tag">Vite</span>
+        <span class="tech-tag">MediaRecorder API</span>
+        <span class="tech-tag">Geolocation API</span>
+        <span class="tech-tag">Resend Email API</span>
+        <span class="tech-tag">Vercel Serverless</span>
+        <span class="tech-tag">localStorage</span>
+        <span class="tech-tag">Google Maps Links</span>
+        <span class="tech-tag">oxlint</span>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="section-heading">Challenges & Decisions</h2>
+      <div class="challenges-list">
+        <div class="challenge-card">
+          <h4>The Email API Cannot Be Called from a Browser</h4>
+          <p>Resend blocks browser calls with CORS, so the browser posts to same-origin /api/emails and a server-side proxy forwards to Resend while injecting the API key. One fix solved two problems: CORS disappeared, and the key stopped existing in client code entirely.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Attachments That Actually Open</h4>
+          <p>Browsers record webm, which Gmail, iPhone Mail, and Outlook cannot play — and a base64 helper that sliced at the first comma corrupted every video because the MIME type contains a comma in its codec list. Recordings now negotiate MP4/M4A first, and the encoder works on raw bytes in 32KB chunks with no URL parsing.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>It Must Always Send</h4>
+          <p>A panic tool cannot lose the alert because a recording ran long. Three guarantees: record-time compression (24kbps mono audio, 320x240 video at 15fps), a size guard that drops an oversized attachment with a note in the email body, and a send path where one failing recipient never blocks the others.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Three Triggers, One Microphone</h4>
+          <p>Audio, video, and SOS share device hardware and must never run in parallel. A promise-chain ownership lock serialises them: a new trigger stops the active one and awaits its full stop-save-send pipeline before starting.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>Keeping the Disguise Airtight</h4>
+          <p>Halfway through, the browser tab read "sos" — a total cover failure. Fixes: the static title became "Safe", a document.title effect maps every view to its disguise name, the favicon was audited, and trigger labels were frozen so colour is the only state signal.</p>
+        </div>
+        <div class="challenge-card">
+          <h4>SMS Died Behind a Paywall, Not Deleted</h4>
+          <p>Twilio trial accounts refused the South African destination number, so the alert channel was rebuilt on Resend email by rewriting the three send modules as thin wrappers with identical signatures. The Twilio path remains in the codebase — restoring SMS is a rewire of three functions, not a rewrite.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-bottom-nav">
+      <a href="dira.html" class="project-nav-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Dira
+      </a>
+      <a href="index.html" class="project-nav-link">All Projects</a>
+      <a href="sos-app.html" class="project-nav-link">
+        SOS App
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer class="project-footer">
+    <div class="container">
+      <p>Designed and built by Hlulani Baloyi</p>
+    </div>
+  </footer>
+
+  <script>
+    var topbar = document.querySelector('.project-topbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) { topbar.classList.add('scrolled'); }
+      else { topbar.classList.remove('scrolled'); }
+    });
+  </script>
+</body>
+</html>
