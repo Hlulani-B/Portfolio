@@ -606,7 +606,6 @@
       padding: 0.7rem 1rem; background: #5c0a1e; border-bottom: 2px solid #ff4f8b;
     }
     #hb-head strong { color: #ff80ab; font-size: 0.95rem; }
-    #hb-head label { font-size: 0.75rem; margin-right: 0.4rem; }
     #hb-head button {
       background: #ff4f8b; color: #1a0509; border: none; border-radius: 4px;
       padding: 0.25rem 0.5rem; font-size: 0.75rem; cursor: pointer; font-weight: bold;
@@ -663,7 +662,7 @@
   <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
   <script>
     (function () {
-      // Change this to your server
+      // Change this to your Render URL, keep /chat on the end
       const API_URL = "https://hlulani-chat-api.onrender.com/chat";
 
       const btn = document.getElementById("hb-chat-btn");
@@ -674,13 +673,11 @@
       const form = document.getElementById("hb-form");
       const input = document.getElementById("hb-input");
       const sendBtn = document.getElementById("hb-send");
-      const useHistory = document.getElementById("hb-history");
       const clearBtn = document.getElementById("hb-clear");
 
       let chat = [];
       try {
         chat = JSON.parse(localStorage.getItem("hb_chat_history")) || [];
-        useHistory.checked = localStorage.getItem("hb_use_history") !== "false";
       } catch (e) {}
 
       function render(role, text) {
@@ -697,18 +694,13 @@
       }
 
       function save() {
-        if (useHistory.checked) {
+        try {
           localStorage.setItem("hb_chat_history", JSON.stringify(chat));
-        }
+        } catch (e) {}
       }
 
-      if (useHistory.checked) {
-        chat.forEach(function (m) { render(m.role, m.text); });
-      } else {
-        chat = [];
-      }
+      chat.forEach(function (m) { render(m.role, m.text); });
 
-      // Popup 5 seconds after the page loads (once per visit)
       popup.addEventListener("click", function () { popup.style.display = "none"; });
       popupClose.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -727,15 +719,6 @@
         if (panel.style.display === "flex") input.focus();
       });
 
-      useHistory.addEventListener("change", function () {
-        localStorage.setItem("hb_use_history", useHistory.checked);
-        if (!useHistory.checked) {
-          localStorage.removeItem("hb_chat_history");
-        } else {
-          save();
-        }
-      });
-
       clearBtn.addEventListener("click", function () {
         chat = [];
         msgs.innerHTML = "";
@@ -749,15 +732,12 @@
         input.value = "";
         sendBtn.disabled = true;
 
-        // Only send past messages when history is on
-        const historyPrompt = useHistory.checked
-          ? chat.map(function (m) {
-              return (m.role === "user" ? "User: " : "Assistant: ") + m.text;
-            }).join("\n")
-          : "";
+        const historyPrompt = chat.map(function (m) {
+          return (m.role === "user" ? "User: " : "Assistant: ") + m.text;
+        }).join("\n");
 
         render("user", question);
-        const bot = render("bot", "Thinking...");
+        const bot = render("bot", "Thinking... the first reply can take up to a minute while the server wakes up.");
 
         try {
           const res = await fetch(API_URL, {
@@ -768,12 +748,9 @@
           const data = await res.json();
           const markdown = data.markdown || data.error || "No response";
           bot.innerHTML = DOMPurify.sanitize(marked.parse(markdown));
-
-          if (useHistory.checked) {
-            chat.push({ role: "user", text: question });
-            chat.push({ role: "bot", text: markdown });
-            save();
-          }
+          chat.push({ role: "user", text: question });
+          chat.push({ role: "bot", text: markdown });
+          save();
         } catch (err) {
           bot.textContent = "Could not reach the server.";
         }
