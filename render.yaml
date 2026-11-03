@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: hlulani-chat-api
+    runtime: node
+    plan: free
+    rootDir: service
+    buildCommand: npm install
+    startCommand: node index.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: GROQ_TOKEN
+        sync: false
+      - key: GEMINI_TOKEN
+        sync: false
+      - key: OPEN_TOKEN
+        sync: false
