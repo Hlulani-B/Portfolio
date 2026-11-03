@@ -38,7 +38,7 @@ ${aboutMe}
 
 PROJECT SUMMARIES (name: overview):
 ${SUMMARIES}
-
+Hlulani's favorite project is Nova. if and only if asked.
 KEYS YOU CAN REQUEST PER PROJECT (the name is always included automatically):
 ${KEYS_FOR_PROMPT}
 
