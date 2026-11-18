@@ -1,0 +1,21 @@
+/* ============================================
+   project-cards/card-frame.css
+   Isolated styles that apply *inside* each project-card iframe.
+   Rules that shape the article itself still come from ../styles.css.
+   Only what is needed so the iframe body reads as a seamless slice
+   of the parent page and the parent can control its height.
+   ============================================ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+}
+
+body.card-frame {
+  /* Parent sizes the iframe explicitly; hide any inner scrollbars so the
+     card reads as if it were inline. Also stops the article's trailing
+     margin-bottom from collapsing out of the body. */
+  overflow: hidden;
+}
