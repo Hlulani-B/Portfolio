@@ -21,6 +21,7 @@ export const projectNames = [
   "Cortex",
   "E-Draft",
   "Dira",
+  "Kopano (Church)",
 ];
 
 export const projects = [
@@ -1007,6 +1008,124 @@ export const projects = [
             "Storing topic name instead of a foreign key ID is a deliberate simplicity trade-off. Archiving uses a flag rather than deletion, matching the requirement that tasks can be archived but never deleted. Overdue status is computed, not stored, keeping the schema clean.",
         },
       ],
+    },
+  },
+  {
+    name: "Kopano (Church)",
+    overview:
+      "A full attendance and member management platform for small churches, shipped as a React 19 + Vite SPA (church-juef.vercel.app) with three Vercel Serverless tiers (api/self, api/leader, api/admin). Every request is a function call dispatched by name against a strict server-side allowlist; Firebase ID tokens are verified server-side and the user's role from the profiles table gates tier access. The service-role Supabase key lives only in Vercel env vars and never in dist/, so the browser can never read another member's data. Members check in with a 4-digit per-service PIN or a per-member QR code, both validated server-side against a 5-minute service window and (for the leader-assisted check-in form) a haversine distance rule from the church. A companion MkDocs Material documentation site covers architecture, auth, database, security model and every screen, plus an honest dated security findings audit.",
+    tech_stack: [
+      "React 19",
+      "Vite 8",
+      "react-router-dom 7",
+      "Vercel Serverless",
+      "Supabase",
+      "PostgREST",
+      "PostgreSQL",
+      "Firebase Auth",
+      "qrcode.react",
+      "Vitest",
+      "oxlint",
+      "MkDocs Material",
+    ],
+    video_link: null,
+    site_link: "https://church-juef.vercel.app/",
+    source_code: "https://github.com/Hlulani-B/Church",
+    documentation_site:
+      "https://github.com/Hlulani-B/Church/tree/main/Documentation-site/docs",
+    problems: [
+      {
+        title: "RLS Was Off on Two Sensitive Tables",
+        description:
+          "The security audit in docs/findings.md caught that event and testimony had Supabase RLS disabled, and the public anon key plus the PostgREST REST endpoint leaked 1,000 attendance rows and 242 testimonies to anyone who asked. Fixed by enabling RLS with owner-or-admin policies and by removing the direct anon REST surface from the client.",
+      },
+      {
+        title: "A React Auth Race That Logged Users Out",
+        description:
+          "The initial Auth.onChange firing (on persisted-session restore) clobbered the current user's localStorage snapshot, so navigating away and back could log you out. Rewrote onAuthStateChanged to fire downstream updates only when the person changes, not on every token refresh, and to always re-sync the current user's snapshot when it runs.",
+      },
+      {
+        title: "Service-Role Key Isolation",
+        description:
+          "Vite inlines any VITE_-prefixed variable into the shipped bundle, so the service-role Supabase key was renamed to plain SUPABASE_SERVICE_ROLE_KEY. If it ever lands in dist/ the CI build fails.",
+      },
+      {
+        title: "Double Mount + Double Instance",
+        description:
+          "React 18 StrictMode double-mount plus two Firebase App.create calls leaked listeners and doubled initialization work. Consolidated to one Firebase instance and cleaned up listeners in every useEffect return. The double mount then caused duplicate join codes to be generated, solved with a one-shot effect guard.",
+      },
+      {
+        title: "Cancel Semantics Confused Two Flags",
+        description:
+          "The original cancelAttendance set is_cancelled=true and removed the join_id, making it impossible to distinguish never-checked-in from cancelled. Fixed the server function to only set is_cancelled=true, kept join_id stable, and removed the redundant client-side removeAttendance so UI reads is_cancelled as the one-way, one-action-per-service truth.",
+      },
+      {
+        title: "Two-Arg addEventListener Silent Failure",
+        description:
+          "In plain JavaScript, passing a boolean as the second arg (addEventListener('click', handler, true)) is a valid capture flag, not a placeholder for arguments, so the handler was bound with no event args and did nothing. Refactored to named functions.",
+      },
+    ],
+    additional: {
+      role:
+        "Sole author. Full stack: React SPA, three Vercel serverless tiers, Supabase schema and RLS policies, security audit and 12-page MkDocs documentation site.",
+      app_name:
+        "The app is presented as Kopano (church in Tswana); the repository is Church.",
+      key_features: [
+        {
+          title: "Session Engine",
+          description:
+            "4-digit PIN chosen per member per service, 5-minute window, haversine distance rule, one-way cancel, plus a self-service flow (choose service, enter your PIN, done).",
+        },
+        {
+          title: "Per-Member QR Check-in",
+          description:
+            "Members see a QR encoding their join_id; leaders scan with a phone camera, no external service. Works offline once a leader's roster is cached.",
+        },
+        {
+          title: "Server-Allowlisted Function Names",
+          description:
+            "Every request is {fn, args} to one of three tiers. A function is available only in the highest tier its users should reach. Unknown fn returns 404.",
+        },
+        {
+          title: "Invite Codes From Visually-Safe Alphabet",
+          description:
+            "join_id (6 chars) is drawn from an alphabet without 0/O/1/l/I using crypto.getRandomValues, so codes survive WhatsApp auto-correct and tired eyes.",
+        },
+        {
+          title: "Service-Tiered Permissions",
+          description:
+            "Members self-service only; leaders see their group's roster and stats; admins manage services, members, assignments and settings. Tier boundaries enforced server-side by Firebase ID token + role from profiles table.",
+        },
+        {
+          title: "Honest Security Findings Doc",
+          description:
+            "docs/findings.md is a dated, numbered audit of eight real issues, root causes, and how each was fixed, including the RLS-off leak that exposed 1,000 rows.",
+        },
+      ],
+      database_design: [
+        {
+          title: "Profiles and Memberships",
+          description:
+            "Supabase auth.users extended by profiles (uid + role). church_memberships gates multi-church support before it is needed. members carries the visually-safe join_id and per-member per-service pin.",
+        },
+        {
+          title: "Services, Events, Attendance",
+          description:
+            "A service has a 5-minute check-in window; events hold sermons and testimonies; attendance is one row per (member, service) with a boolean is_cancelled that is one-way, never both flag and delete.",
+        },
+        {
+          title: "Leader-Managed Assignment",
+          description:
+            "Leaders assign members to sermons and testimonies and record actual attendance; assignments are audited via author_id on the event table.",
+        },
+        {
+          title: "RLS Everywhere",
+          description:
+            "Owner-or-admin policies on sensitive tables (event, testimony) and role-scoped reads. Direct anon REST access is not relied on by the client.",
+        },
+      ],
+      docs_site:
+        "MkDocs Material site in Documentation-site/ with 12 pages: architecture, authentication, security model, database schema, session engine, QR check-in, leader workflows, admin workflows, member flows, findings.",
     },
   },
 ];
